@@ -1,0 +1,48 @@
+
+        
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details Form</title>
+    <link rel="stylesheet" href="createEmployee.css">
+</head>
+
+<body>
+    <center>
+    <%-include('../partial/header.ejs')%>
+    <h2>Employee Information Form</h2>
+
+<form action="/new/success" method="POST" enctype="multipart/form-data">
+
+    
+    
+    <div>
+    <label for="empid">Employee ID:</label>
+    <input type="text" id="empid" name="empid" required><br><br>
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" class="emp" required><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" class="emp"  required><br><br>
+
+    <label for="position">Position:</label>
+    <input type="text" id="position" name="position" class="position" required><br><br>
+
+    <label for="salary">Salary:</label>
+    <input type="number" id="salary" name="salary" class="salary"  required><br><br>
+
+    <input type="file" name="photo" class="photo">
+
+    <div><button type="submit" class="button">Submit</button></div>
+
+</div>
+</form>
+
+</center>
+</body>
+</html>
+
+       

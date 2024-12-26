@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+    <link rel="stylesheet" href="employee.css">
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+            background-color: white;
+            border: 1px solid black;
+            width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin: 50px auto;
+        }
+
+        label {
+            width: 120px;
+            font-size: 25px;
+            display: inline-block;
+        }
+
+        input {
+            font-size: 20px;
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+      
+        }
+
+        .emp, .position, .salary {
+            position: relative;
+            /* left: 36px; */
+        }
+
+        input[type="file"] {
+            position: relative;
+            left: 40px;
+            padding: 10px;
+            border: none;
+        }
+
+        button {
+            padding: 10px;
+            border-radius: 20px;
+            font-size: 30px;
+            background-color:green;
+            cursor: pointer;
+            width: 50%;
+            margin-top: 20px;
+        }
+
+        
+      
+
+       
+        @media (max-width: 480px) {
+            form {
+                width: 90%; 
+                padding: 20px;
+            }
+
+            input {
+                width: 100%;
+                padding: 8px;
+            }
+
+            button {
+                font-size: 16px;
+                padding: 12px;
+            }
+
+            label {
+                font-size: 16px;
+            }
+        }
+
+    </style>
+</head>
+<%- include('../partial/header.ejs') %>
+
+<body style="background-color:rgb(11, 11, 73)">
+    <!-- <div style="background-color: black;"> -->
+    <center>
+        <h2 style="color: white;">Employee Information Form</h2>
+
+        <form action="/new/success/<%= employee.empid %>" method="POST" enctype="multipart/form-data">
+            <div>
+                <% if (employee.photo) { %>
+                    <img src="<%= employee.photo %>" alt="Employee Photo" width="100px" height="100px" style="border-radius: 50%;"><br>
+                <% } %>
+                <input type="file" id="photo" name="photo"><br><br>
+                
+                <label for="empid">Employee ID:</label>
+                <input type="text" id="empid" name="empid" value="<%= employee.empid %>"><br><br>
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" class="emp"  value="<%= employee.name %>"><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" class="emp" value="<%= employee.email %>"><br><br>
+
+                <label for="position">Position:</label>
+                <input type="text" name="position" class="position" value="<%= employee.position %>"><br><br>
+
+                <label for="salary">Salary:</label>
+                <input type="number" name="salary" class="salary" value="<%= employee.salary %>" required><br><br>
+
+                <button type="submit">Update Employee</button>
+            </div>
+        </form>
+    </center>
+</div>
+</body>
+</html>

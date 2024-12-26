@@ -1,0 +1,36 @@
+body{
+    background-image:url(./home.jpg);
+    background-repeat:no-repeat;
+ background-position: center;
+background-attachment: fixed; 
+background-size: cover;
+
+width:98vw; 
+}
+
+main {
+ margin-top: 80px;
+padding: 40px;  
+text-align: center;
+color: white;
+}
+
+
+main h2 {
+color:white;  
+font-size: 30px; 
+
+}
+
+
+main p {
+color:white;   
+line-height: 1.6;  
+margin-bottom: 20px; 
+font-size: 20px; 
+}
+
+
+
+
+ 
